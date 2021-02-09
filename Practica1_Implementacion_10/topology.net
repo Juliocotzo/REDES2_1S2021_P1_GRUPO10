@@ -1,10 +1,10 @@
 autostart = False
 version = 0.8.6
 [127.0.0.1:7200]
-    workingdir = C:\Users\betor\AppData\Local\Temp
+    workingdir = C:\Users\julio\AppData\Local\Temp
     udp = 10001
     [[3725]]
-        image = C:\Users\betor\Desktop\2021\REDES2\addons\dynamips\c3725-adventerprisek9-mz124-15.image
+        image = D:\USAC\2021 PRIMER SEMESTRE\REDES 2\addons\dynamips\c3725-adventerprisek9-mz124-15.image
         ram = 128
         idlepc = 0x60bf8ba0
         sparsemem = True
@@ -43,6 +43,8 @@ version = 0.8.6
         z = 1.0
 [GNS3-DATA]
     configs = configs
+    m11 = 0.707106781187
+    m22 = 0.707106781187
     [[Cloud C6]]
         symbol = Host
         x = 333.5
