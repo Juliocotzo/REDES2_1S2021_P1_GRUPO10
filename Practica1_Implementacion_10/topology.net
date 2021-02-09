@@ -1,10 +1,10 @@
 autostart = False
 version = 0.8.6
 [127.0.0.1:7200]
-    workingdir = C:\Users\juanp\AppData\Local\Temp
+    workingdir = C:\Users\betor\AppData\Local\Temp
     udp = 10001
     [[3725]]
-        image = C:\Users\juanp\Downloads\addons\addons\dynamips\c3725-adventerprisek9-mz124-15.image
+        image = C:\Users\betor\Desktop\2021\REDES2\addons\dynamips\c3725-adventerprisek9-mz124-15.image
         ram = 128
         idlepc = 0x60bf8ba0
         sparsemem = True
@@ -41,43 +41,172 @@ version = 0.8.6
         x = -39.0
         y = 58.0
         z = 1.0
+        hx = 19.5
+        hy = 41.0
 [GNS3-DATA]
     configs = configs
-    m11 = 1.0
-    m22 = 1.0
+    [[NOTE 1]]
+        text = "192.168.13.150/26 192.168.13.129"
+        x = 258.0
+        y = 179.0
+    [[NOTE 2]]
+        text = "192.168.13.140/26 192.168.13.129\n\n"
+        x = 251.0
+        y = -58.0
+    [[NOTE 3]]
+        text = "192.168.13.90/26 192.168.13.65"
+        x = 24.0
+        y = -250.0
+    [[NOTE 4]]
+        text = "192.168.13.80/26 192.168.13.65\n\n"
+        x = -250.0
+        y = -247.0
+    [[NOTE 5]]
+        text = "192.168.13.20/26 192.168.13.1"
+        x = -519.0
+        y = 178.0
+    [[NOTE 6]]
+        text = "192.168.13.10/26 192.168.13.1"
+        x = -513.0
+        y = -83.0
+    [[NOTE 7]]
+        text = "ADMINISTRACION"
+        x = 490.0
+        y = 50.0
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 8]]
+        text = "DISTRIBUCION"
+        x = -87.0
+        y = -301.0
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 9]]
+        text = "VENTAS"
+        x = -605.0
+        y = 45.0
+        font = "MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0"
+    [[NOTE 10]]
+        text = "f1/0"
+        x = 78.9995867833
+        y = 23.8181836964
+        interface = R1 f1/0
+    [[NOTE 11]]
+        text = "f0/1"
+        x = 37.9119673585
+        y = -28.985199574
+        interface = R1 f0/1
+    [[NOTE 12]]
+        text = "f0/0"
+        x = -40.9983768539
+        y = -7.36034573742
+        interface = R1 f0/0
+    [[NOTE 13]]
+        text = "1"
+        x = 36.5880326415
+        y = 55.985199574
+        interface = SW2 1
+    [[NOTE 14]]
+        text = "3"
+        x = 60.3853712141
+        y = -15.316422202
+        interface = SW2 3
+    [[NOTE 15]]
+        text = "2"
+        x = 8.54152049911
+        y = -13.5506409914
+        interface = SW2 2
+    [[NOTE 16]]
+        text = "1"
+        x = -4.49958678326
+        y = 16.1818163036
+        interface = SW3 1
+    [[NOTE 17]]
+        text = "3"
+        x = 73.1133646915
+        y = 29.610099066
+        interface = SW3 3
+    [[NOTE 18]]
+        text = "2"
+        x = 73.0419884213
+        y = 2.19423651604
+        interface = SW3 2
+    [[NOTE 19]]
+        text = "1"
+        x = 75.4983768539
+        y = 16.3603457374
+        interface = SW1 1
+    [[NOTE 20]]
+        text = "3"
+        x = -2.99016339688
+        y = 26.8861068193
+        interface = SW1 3
+    [[NOTE 21]]
+        text = "2"
+        x = -2.93965853753
+        y = 4.93687876237
+        interface = SW1 2
+    [[NOTE 22]]
+        text = "NIO_udp:30005:127.0.0.1:20005"
+        x = -5.11336469147
+        y = 15.889900934
+        interface = C6 NIO_udp:30005:127.0.0.1:20005
     [[Cloud C6]]
         symbol = Host
         x = 333.5
         y = 104.5
         z = 1.0
         connections = SW3:3:NIO_udp:30005:127.0.0.1:20005
+    [[NOTE 23]]
+        text = "NIO_udp:30004:127.0.0.1:20004"
+        x = -5.0419884213
+        y = 43.305763484
+        interface = C5 NIO_udp:30004:127.0.0.1:20004
     [[Cloud C5]]
         symbol = Host
         x = 336.5
         y = -7.5
         z = 1.0
         connections = SW3:2:NIO_udp:30004:127.0.0.1:20004
-    [[Cloud C4]]
-        symbol = Host
-        x = 46.5
-        y = -208.5
-        z = 1.0
-        connections = SW2:3:NIO_udp:30003:127.0.0.1:20003
+    [[NOTE 24]]
+        text = "NIO_udp:30001:127.0.0.1:20001"
+        x = 70.9901633969
+        y = 18.6138931807
+        interface = C2 NIO_udp:30001:127.0.0.1:20001
     [[Cloud C2]]
         symbol = Host
-        x = -458.5
-        y = 104.5
+        x = -448.5
+        y = 107.5
         z = 1.0
         connections = SW1:3:NIO_udp:30001:127.0.0.1:20001
+    [[NOTE 25]]
+        text = "NIO_udp:30000:127.0.0.1:20000"
+        x = 70.9396585375
+        y = 40.5631212376
+        interface = C1 NIO_udp:30000:127.0.0.1:20000
     [[Cloud C1]]
         symbol = Host
-        x = -465.5
-        y = -10.5
+        x = -444.5
+        y = -25.5
         z = 1.0
         connections = SW1:2:NIO_udp:30000:127.0.0.1:20000
+    [[NOTE 26]]
+        text = "NIO_udp:30003:127.0.0.1:20003"
+        x = 7.61462878589
+        y = 60.816422202
+        interface = C4 NIO_udp:30003:127.0.0.1:20003
+    [[Cloud C4]]
+        symbol = Host
+        x = 101.5
+        y = -201.5
+        z = 1.0
+        connections = SW2:3:NIO_udp:30003:127.0.0.1:20003
+    [[NOTE 27]]
+        text = "NIO_udp:30002:127.0.0.1:20002"
+        x = 59.4584795009
+        y = 59.0506409914
+        interface = C3 NIO_udp:30002:127.0.0.1:20002
     [[Cloud C3]]
         symbol = Host
-        x = -146.5
-        y = -210.5
+        x = -175.5
+        y = -202.5
         z = 1.0
         connections = SW2:2:NIO_udp:30002:127.0.0.1:20002
