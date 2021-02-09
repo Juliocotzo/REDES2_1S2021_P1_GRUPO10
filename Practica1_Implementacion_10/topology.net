@@ -1,0 +1,82 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = C:\Users\juanp\AppData\Local\Temp
+    udp = 10001
+    [[3725]]
+        image = C:\Users\juanp\Downloads\addons\addons\dynamips\c3725-adventerprisek9-mz124-15.image
+        ram = 128
+        idlepc = 0x60bf8ba0
+        sparsemem = True
+        ghostios = True
+    [[ETHSW SW1]]
+        1 = access 1 R1 f0/0
+        2 = access 1 NIO_udp:30000:127.0.0.1:20000
+        3 = access 1 NIO_udp:30001:127.0.0.1:20001
+        x = -388.5
+        y = 136.0
+        z = 1.0
+    [[ETHSW SW3]]
+        1 = access 1 R1 f1/0
+        2 = access 1 NIO_udp:30004:127.0.0.1:20004
+        3 = access 1 NIO_udp:30005:127.0.0.1:20005
+        x = 83.5
+        y = 129.0
+        z = 1.0
+    [[ETHSW SW2]]
+        1 = access 1 R1 f0/1
+        2 = access 1 NIO_udp:30002:127.0.0.1:20002
+        3 = access 1 NIO_udp:30003:127.0.0.1:20003
+        x = -133.5
+        y = -39.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3725
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        f0/0 = SW1 1
+        f0/1 = SW2 1
+        slot1 = NM-1FE-TX
+        f1/0 = SW3 1
+        x = -140.0
+        y = 106.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[Cloud C6]]
+        symbol = Host
+        x = 265.5
+        y = 179.5
+        z = 1.0
+        connections = SW3:3:nio_udp:30005:127.0.0.1:20005
+    [[Cloud C5]]
+        symbol = Host
+        x = 267.5
+        y = 56.5
+        z = 1.0
+        connections = SW3:2:nio_udp:30004:127.0.0.1:20004
+    [[Cloud C4]]
+        symbol = Host
+        x = -35.5
+        y = -160.5
+        z = 1.0
+        connections = SW2:3:nio_udp:30003:127.0.0.1:20003
+    [[Cloud C3]]
+        symbol = Host
+        x = -223.5
+        y = -172.5
+        z = 1.0
+        connections = SW2:2:nio_udp:30002:127.0.0.1:20002
+    [[Cloud C2]]
+        symbol = Host
+        x = -584.5
+        y = 165.5
+        z = 1.0
+        connections = SW1:3:nio_udp:30001:127.0.0.1:20001
+    [[Cloud C1]]
+        symbol = Host
+        x = -580.5
+        y = 51.5
+        z = 1.0
+        connections = SW1:2:nio_udp:30000:127.0.0.1:20000
